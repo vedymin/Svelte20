@@ -6,6 +6,7 @@
 	on('change:level', async () => {
 		const attrs = await getAttrsAsync(['level']);
 		const level = +attrs.level;
+		TAS.log('Hello World!');
 		if (isNaN(level)) return;
 		setAttrs({
 			hp_max: level * 2,
