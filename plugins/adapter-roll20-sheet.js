@@ -28,7 +28,7 @@ export default (options) => ({
 
 		fs.mkdirSync(outDir);
 
-		const files = glob.sync(path.join(tempDir, '*'));
+		const files = glob.sync(path.join(tempDir, '*').replace(/\\/g, '/'));
 
 		for (const file of files) {
 			if (fs.lstatSync(file).isDirectory()) continue;
